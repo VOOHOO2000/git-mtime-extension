@@ -50,7 +50,7 @@ bool parseline(const char* line, int& time, char*& ptr)
   time = 0;
   ptr = (char*)line;
   if( parsenum(time, ptr))
-  { 
+  {
     ptr++;
     return true;
   }
@@ -134,7 +134,7 @@ void write(const char * file, std::map<std::string, int>& mapa)
   {
     if(*(itr->first.c_str()) != '\0')
     {
-      outputfile << itr->second << "|" << itr->first << std::endl;   
+      outputfile << itr->second << "|" << itr->first << std::endl;
     }
   }
   outputfile.close();
@@ -173,7 +173,7 @@ int main(int argc, char *argv[])
           std::cout << "saving modification times" << std::endl;
 
           std::map<std::string, int> mapa;
-          load_file(".mtimes", mapa); 
+          load_file(".mtimes", mapa);
           update(mapa, argv[1][1] == 'a');
           write(".mtimes", mapa);
         }
